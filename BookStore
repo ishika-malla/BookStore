@@ -1,0 +1,32 @@
+import java.util.ArrayList;
+public class BookStore
+{
+    private ArrayList<Book> inventory;
+    public BookStore()
+    {
+        inventory = new ArrayList<>();
+    }
+    public ArrayList<Book> getInventory()
+    {
+        return inventory;
+    }
+    public void addBook(Book b) 
+    {
+        inventory.add(b);
+    }
+    public int numBooks()
+    {
+        return inventory.size();
+    }
+    public Book getBook(int index)
+    {
+        if (index<0 || index>=inventory.size())
+        {
+            return null;
+        }
+        else
+        {
+            return inventory.get(index);
+        }
+    }
+}
