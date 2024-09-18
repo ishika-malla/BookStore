@@ -1,0 +1,24 @@
+pubic class Main 
+{
+  public static void main(String[] args) 
+  {
+        Book book1 = new Book("Harry Potter", "J.K Rowling", 15.99);
+        Book book2 = new Book("Ghost House", "Kim Chloe", 12.50);
+        Book book3 = new Book("2008", "Ishika Malla", 20.00);
+        Book book4 = new Book("United States", "Utpal Malla", 50.86);
+        Book book5 = new Book("Ghost House", "Kim Chloe", 12.50);
+        BookStore bookstore = new BookStore();
+        bookstore.addBook(book1);
+        bookstore.addBook(book2);
+        bookstore.addBook(book3);
+        bookstore.addBook(book4);
+        bookstore.addBook(book5);
+        
+        System.out.println("Number of books in the bookstore: " + bookstore.numBooks());
+        System.out.println("Book at index : " + bookstore.getBook(3));
+        System.out.println("Highest priced book: " + BookManager.highestPricedBook(bookstore.getInventory()));
+        BookManager.banBook(bookstore.getInventory(), book4);
+        System.out.println("Number of books in the bookstore after removal: " + bookstore.numBooks());
+        System.out.println("Total value of books in the bookstore: $" + BookManager.bookstoreValue(bookstore));
+    }
+}
