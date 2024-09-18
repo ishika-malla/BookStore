@@ -1,0 +1,36 @@
+ public class BookManager
+{
+    public static Book highestPricedBook(ArrayList<Book> list)
+    {
+        Book highest=list.get(0);
+        for (int i=0;i<list.size();i++)
+        {
+            if(list.get(i).getPrice() > highest.getPrice())
+            {
+               highest=list.get(i);
+            }
+        } 
+        return highest;
+    }
+    public static ArrayList<Book> banBook(ArrayList<Book> list, Book book)
+    {
+        for (int i=0;i<list.size();i++)
+        {
+            if(list.get(i).getTitle() == book.getTitle())
+            {
+                list.remove(i);
+            }
+        }
+        return list;
+    }
+    public static double bookstoreValue(BookStore store)
+    {
+        ArrayList<Book> inventory = store.getInventory();
+        double total=0;
+        for (Book book : store.getInventory()) 
+        {
+            total += book.getPrice();
+        }
+        return total;
+    }
+}
